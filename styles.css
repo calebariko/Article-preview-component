@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+:root{
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+body{
+    min-height: 100vh;
+    background: #f0f0f0;
+    display: grid;
+    place-items: center;
+}
+.container{
+    background: #fff;
+    border-radius: 10px;
+    max-width: 1000px;
+}
+.pri-img{
+    max-width: 100%;
+    min-width: 300px;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+.description{
+    padding: 50px 30px 25px;
+    display: grid;
+    position: relative;
+}
+.text h1{
+    font-size: 28px;
+    line-height: 1;
+    color: var(--Very-Dark-Grayish-Blue);
+    padding-bottom: 10px;
+    max-width: 45ch;
+}
+.text p{
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--Desaturated-Dark-Blue);
+    max-width: 65ch;
+    padding-bottom: 45px;
+}
+.describer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.describer{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.describer img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100vmax;
+}
+.name h2{
+    color: var(--Very-Dark-Grayish-Blue);
+    text-transform: capitalize;
+    font-size: 22px;
+}
+.name p{
+    color: var(--Desaturated-Dark-Blue);
+}
+.view-social #viewSocials{
+    width: 45px;
+    height: 45px;
+    border-radius: 100vmax;
+    background: var(--Grayish-Blue);
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+#socials{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: hsl(220, 21%, 8%);
+    border-radius: 0 0 10px 10px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(0.35, -0.45, 0, 1.5);
+}
+#socials.active{
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.socials img{
+    width: 30px;
+}
+.socials p{
+    font-size: 22px;
+    color: var(--Light-Grayish-Blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-right: 5px;
+}
+
+
+@media (min-width: 992px) {
+    .container{
+        display: flex;
+    }
+    .pri-img{
+        border-radius: 10px 0 0 10px;
+    }
+    .view-social #viewSocials{
+        border: 2px solid #fff;
+    }
+    .view-button{
+        position: relative;
+    }
+    #socials{
+        padding: 0;
+        border-radius: 10px;
+        bottom: -15px;
+        left: 50%;
+        translate: -80% -50%;
+    }
+    #socials.active{
+        padding: 28px 20px;
+        width: unset;
+    }
+}
